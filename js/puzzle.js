@@ -17,7 +17,7 @@ class PuzzleVisualizer {
 
         this.resizeCanvas();
 
-        // 🆕 UPDATED IMAGE SET - Cute animals + Beautiful nature
+        
         this.imageSet = [
     // 🌄 Nature
     'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?w=800',
@@ -78,7 +78,7 @@ class PuzzleVisualizer {
                 this.currentImage = img;
                 this.loading = false;
 
-                // 🔥 initialize tiles AFTER image loads
+                
                 this.initializeTiles();
 
                 this.updatePuzzle();
@@ -121,7 +121,7 @@ class PuzzleVisualizer {
         this.updatePuzzle();
     }
 
-    // 🔥 create shuffled puzzle
+    
     initializeTiles() {
         const total = this.cols * this.rows || 16;
 
@@ -135,7 +135,7 @@ class PuzzleVisualizer {
         }
     }
 
-    // 🔥 progressively fix tiles (sorting effect)
+    
     updateTiles(progress) {
         if (!this.tiles.length) return;
         
@@ -206,7 +206,7 @@ class PuzzleVisualizer {
             for (let col = 0; col < cols; col++) {
                 const index = row * cols + col;
                 
-                // If tiles array exists, use shuffled positions
+                
                 let srcRow, srcCol;
                 
                 if (this.tiles && this.tiles.length > 0 && index < this.tiles.length) {
@@ -214,7 +214,7 @@ class PuzzleVisualizer {
                     srcRow = Math.floor(tileValue / cols);
                     srcCol = tileValue % cols;
                 } else {
-                    // Fallback to normal grid
+                    
                     srcRow = row;
                     srcCol = col;
                 }
@@ -234,7 +234,7 @@ class PuzzleVisualizer {
                     tileH
                 );
 
-                // Draw subtle border for puzzle effect
+                
                 this.ctx.strokeStyle = "rgba(255,255,255,0.3)";
                 this.ctx.lineWidth = 1;
                 this.ctx.strokeRect(x, y, tileW, tileH);

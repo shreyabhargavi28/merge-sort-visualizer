@@ -103,7 +103,7 @@ class MergeSortVisualizer {
     }
 }
 
-// Code snippets for different languages
+
 const codeSnippets = {
     python: `def merge_sort(arr):
     if len(arr) <= 1:
@@ -214,7 +214,7 @@ void merge(vector<int>& arr, int left, int mid, int right) {
     }
 }`
 };
-// Add this to your existing codeSnippets object
+
 java: `public class MergeSort {
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {

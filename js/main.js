@@ -1,4 +1,4 @@
-// Main Application Controller
+
 let mergeSortVisualizer;
 let puzzleVisualizer;
 let currentSteps = [];
@@ -30,9 +30,7 @@ function getAdjustedSpeed() {
     const max = parseInt(speedSlider.max) || 1000;
     const value = parseInt(speedSlider.value);
     
-    // Inverse mapping: lower slider value = slower, higher slider value = faster
-    // When slider at min (100) -> return max (1000ms = slow)
-    // When slider at max (1000) -> return min (100ms = fast)
+    
     return max - value + min;
 }
 
@@ -107,8 +105,7 @@ function updateDisplay() {
     
     const sortingMessage = document.getElementById('puzzleMessage');
     if (sortingMessage && step.description) {
-        // Don't override puzzle message, keep it showing tile progress
-        // The puzzle message is managed by puzzle.js
+        
     }
 }
 
@@ -171,7 +168,7 @@ async function resetSort() {
     generateRandomArray(size);
 }
 
-// 🔥 FIXED PLAY FUNCTION with inverted speed
+
 function startPlaying() {
     if (isPlaying) return;
     
@@ -227,7 +224,7 @@ function initEventListeners() {
     if (stepForwardBtn) stepForwardBtn.addEventListener('click', nextStep);
     if (resetBtn) resetBtn.addEventListener('click', resetSort);
     
-    // 🔥 FIXED SLIDER DISPLAY with visual feedback
+    
     if (speedSlider) {
         speedSlider.addEventListener('input', (e) => {
             updateSpeedDisplay();
@@ -249,7 +246,7 @@ function initEventListeners() {
     
     if (applyCustomBtn) applyCustomBtn.addEventListener('click', applyCustomArray);
     
-    // Show/Hide Code
+    
     if (showCodeBtn && codeSection) {
         showCodeBtn.addEventListener('click', () => {
             codeSection.classList.toggle('expanded');
@@ -287,7 +284,7 @@ function initCodeTabs() {
 // Start app
 init();
 
-// Keyboard shortcuts
+
 document.addEventListener('keydown', (e) => {
     switch (e.key) {
         case 'ArrowRight':
